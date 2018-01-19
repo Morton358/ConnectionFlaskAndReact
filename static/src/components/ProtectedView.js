@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../actions/data';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import axios from 'axios';
 
 function mapStateToProps(state) {
     return {
@@ -19,8 +22,17 @@ function mapDispatchToProps(dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class ProtectedView extends React.Component {
+  state = {
+    lindoapi: '',
+  }
+
     componentDidMount() {
-        this.fetchData();
+        this.fetchData()
+        axios.get('/api/calculate')
+        .then(response => {
+          this.setState({lindoapi: response.data})
+          console.log(response);
+        });
     }
 
 
@@ -39,6 +51,19 @@ export default class ProtectedView extends React.Component {
                         <h1>Welcome back,
                             {this.props.userName}!</h1>
                         <h1>{this.props.data.data.email}</h1>
+                        <RaisedButton
+                          label="Calculate"
+                          primary={true}
+                          onClick="" />
+                          <Card>
+                            <CardHeader
+                              title="Objective value is:"
+                              actAsExpander={true}
+                            />
+                            <CardText expandable={true}>
+                              {this.state.lindoapi.objective}
+                            </CardText>
+                          </Card>
                     </div>
                 }
             </div>

@@ -3,6 +3,7 @@ from .models import User
 from index import app, db
 from sqlalchemy.exc import IntegrityError
 from .utils.auth import generate_token, requires_auth, verify_token
+import prepareDataLINDO
 
 
 @app.route('/', methods=['GET'])
@@ -62,3 +63,9 @@ def is_token_valid():
         return jsonify(token_is_valid=True)
     else:
         return jsonify(token_is_valid=False), 403
+
+
+@app.route("/api/calculate", methods=["GET"])
+def calculate():
+    binder = prepareDataLINDO.calculation()
+    return jsonify(binder)

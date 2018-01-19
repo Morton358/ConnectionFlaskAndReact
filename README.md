@@ -1,6 +1,5 @@
-# React-Redux-Flask #
+# React-Redux-Flask-LINDO-API #
 
-Boilerplate application for a Flask JWT Backend and a React/Redux Front-End with Material UI.
 
 * Python 2.7+ or 3.x
 * Pytest
@@ -94,7 +93,7 @@ $ brew install python3
 Now you can check again to see if both python and pip are installed. Once pip is installed, you can download the required flask modules:
 
 ```
-$ sudo pip install flask flask_script flask_migrate flask_bcrypt 
+$ sudo pip install flask flask_script flask_migrate flask_bcrypt numpy 
 ```
 
 Now, you can decide on which database you wish to use. 
@@ -134,6 +133,7 @@ $ npm start
 6. open your browser to http://localhost:3000/register and setup your first account
 7. enjoy! By this point, you should be able to create an account and login without errors. 
 
-
+#### LINDO-API 11.0:
+How to install LINDO-API see : https://www.lindo.com/index.php/products/lindo-api-for-custom-optimization-application
 
 

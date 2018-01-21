@@ -5,6 +5,7 @@ import * as actionCreators from '../actions/data';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import axios from 'axios';
+// import Plants from './Plants'
 
 function mapStateToProps(state) {
     return {
@@ -42,6 +43,12 @@ export default class ProtectedView extends React.Component {
     }
 
     render() {
+      // const productionCapacities = [...this.state.lindoapi[Gr]]
+      // for (let productionCapacity of productionCapacities) {
+      //   const plants = (
+      //     <Plants Gr={productionCapacity} />
+      //   )
+      // }
         return (
             <div>
                 {!this.props.loaded
@@ -53,9 +60,9 @@ export default class ProtectedView extends React.Component {
                         <h1>{this.props.data.data.email}</h1>
                         <RaisedButton
                           label="Calculate"
-                          primary={true}
-                          onClick="" />
-                          <Card>
+                          primary={true}/>
+                          {/* {plants} */}
+                        <Card>
                             <CardHeader
                               title="Objective value is:"
                               actAsExpander={true}
@@ -63,7 +70,8 @@ export default class ProtectedView extends React.Component {
                             <CardText expandable={true}>
                               {this.state.lindoapi.objective}
                             </CardText>
-                          </Card>
+                        </Card>
+
                     </div>
                 }
             </div>

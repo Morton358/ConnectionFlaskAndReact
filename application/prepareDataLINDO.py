@@ -2,7 +2,7 @@
 import itertools
 from pandas import *
 from operator import mul
-import mathModel
+import application.mathModel
 from pyLindo import *
 import time
 
@@ -11,7 +11,7 @@ def calculation():
 
 
     data = {}
-    data["i3r3e5"] = mathModel.Modell([3, 3, 6])
+    data["i3r3e5"] = application.mathModel.Modell([3, 2, 5])
 
 
 
@@ -714,8 +714,6 @@ def calculation():
     pdLower = N.array(lowerBounds, dtype=N.double)  # lower bounds for desition variables
     pdUpper = N.array(upperBounds, dtype=N.double)  # upper bounds for desition variables
     pachVarType = N.array(pointersToCharacters, dtype=N.character)  # A pointer to a character vector
-    # containing the type of each variable (‘C’, ‘B’, ‘I’, or ‘S’ for continuous, binary, general integer or
-    # semi-continuous, respectively.)
 
     print("\nnCons", nCons, "\nnVars", nVars, "\nnDir", nDir, "\ndObjCons", dObjConst, "\nlen adC", len(adC), "\nadC",
           adC, "\nlen adB", len(adB), "\nadB", adB, "\nlen acConTypes", len(acConTypes), "\nacConTypes", acConTypes)

@@ -1,11 +1,23 @@
 {
   "root": true,
   "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "arrowFunctions": true,
+        "classes": true,
+        "spread": true,
+        "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module",
+    "ecmaVersion": 6
   },
   "globals": {
       "connect": true

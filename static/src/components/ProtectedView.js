@@ -27,11 +27,8 @@ export default class ProtectedView extends React.Component {
     // };
     componentDidMount() {
         this.fetchData();
-    }
-
-    componentDidUpdate() {
         axios.get('/api/calculate').then(response => {
-            console.log(response);
+            console.log('response from server:', response);
         });
     }
 
